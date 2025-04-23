@@ -15,8 +15,9 @@ Data will be pulled from `matminer`
    - DFT data and mpid: `expt_formation_enthalpy` `shape=(701,8)` `cols=(mpid, e_form exp, e_form mp, e_form oqmd)`
 
 ## Tasks
-- [ ] Determine which option we will go with, band gap energy or formation energy?
+- [x] Determine which option we will go with, band gap energy or ~~formation energy~~
 - [x] Sort through the data, determine shape and column labels.
-- [ ] Which structures are the same between dataset (if relevant).
+- [ ] convert `jarvis_dft_3d['composition']` to formula 
+- [ ] Which structures are the same between dataset.
 - [ ] Extract experimental testing data for later.
 
