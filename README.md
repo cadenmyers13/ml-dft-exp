@@ -17,7 +17,7 @@ Data will be pulled from `matminer`
 ## Tasks
 - [x] Determine which option we will go with, band gap energy or ~~formation energy~~
 - [x] Sort through the data, determine shape and column labels.
-- [ ] convert `jarvis_dft_3d['composition']` to formula 
-- [ ] Which structures are the same between dataset.
+- [x] convert `jarvis_dft_3d['composition']` to formula 
+- [ ] Determine which structures are the same between dataset.
 - [ ] Extract experimental testing data for later.
 
