@@ -3,9 +3,10 @@
 
 The goal of this model is to predict some material property (band gap, formation energy, etc) from a structure. The model will first be trained and tested on DFT data, then we will test the model on experimental results.
 
-## Data Options
+## Data
 
 Data will be pulled from `matminer`
+DOI of compressed pickle file: 10.5281/zenodo.15366727
 
 1) band gap energy
    - experimental data and mpid: `expt_gap_kingsbury` `shape=(2481,3)` `cols=(mpid, expt_gap, formula)`
