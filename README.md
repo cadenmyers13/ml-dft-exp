@@ -10,7 +10,7 @@ The goal of this model is to predict band gap from structure and atomic properti
 ## Data
 [DOI of data for this project (compressed pkl file)](https://doi.org/10.5281/zenodo.15366727)
 
-Save the data under the empty directory `data`
+Save the data under the a directory called `data` a level below the top level directory.
 
 Structural data was pulled from `matminer` and atomic properties were pulled using the package `mendeleev`. 
 
@@ -21,7 +21,7 @@ Structural data was pulled from `matminer` and atomic properties were pulled usi
 
 Since each model takes ~1-2hrs to train, I've saved and uploaded all the trained models as `h5` files under `models` in the below Google Drive.
 
-Please download the saved models from this [google drive](https://drive.google.com/drive/folders/1di1Z4m6CiwAwrqTfYHz8m1UNToHFoKvY?usp=drive_link) under the empty `models` directory.
+Please download the saved models from this [google drive](https://drive.google.com/drive/folders/1di1Z4m6CiwAwrqTfYHz8m1UNToHFoKvY?usp=drive_link) under an empty directory called `models` a level below the top level directory.
 
 ## Dependencies
 Create a new environment and install all required `pip` and `conda` dependencies with the command:
