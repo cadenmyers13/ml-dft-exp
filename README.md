@@ -1,24 +1,39 @@
 # ML4MS DFT Prediction
-## Goal of ML model
+Caden Myers and Michelle Vadillo
 
-The goal of this model is to predict some material property (band gap, formation energy, etc) from a structure. The model will first be trained and tested on DFT data, then we will test the model on experimental results.
+## Goal of ML model
+The goal of this model is to predict band gap from structure and atomic properties.
+
+- **Structural Data:** from cif files in Materials Project, we can compute the Smooth Overlap of Atomic Position (SOAP) which is a matrix containing local environment information of each atomic position in the unit cell. The matrix dimension is (`n_atoms`, `X`) where `n_atoms` is the number of atom centers in the unit cell and `X` is a number determined by input parameters.
+- **Atomic Data:** standard deviation, mean, max, and min values of electronegativity, atomic radius, ionization energy, # of valence electrons, and covalent radius of the species in the unit cell. In total, this returned 4x5=20 values. 
 
 ## Data
+[DOI of data for this project (compressed pkl file)](https://doi.org/10.5281/zenodo.15366727)
 
-Data will be pulled from `matminer`
-DOI of compressed pickle file: 10.5281/zenodo.15366727
+Save the data under the a directory called `data` a level below the top level directory.
+
+Structural data was pulled from `matminer` and atomic properties were pulled using the package `mendeleev`. 
 
 1) band gap energy
-   - experimental data and mpid: `expt_gap_kingsbury` `shape=(2481,3)` `cols=(mpid, expt_gap, formula)`
-   - DFT data, mpid, and structure: `jarvis_dft_3d` `shape=(4162,16)` `cols=(structure, mpid, gap opt, e_form, composition)`
-2) formation energy
-   - experimental data and mpid: `expt_formation_enthalpy` `shape=(701,8)` `cols=(mpid, e_form exp, e_form mp, e_form oqmd)`
-   - DFT data and mpid: `expt_formation_enthalpy` `shape=(701,8)` `cols=(mpid, e_form exp, e_form mp, e_form oqmd)`
+   - DFT data, mpid, and structure: `jarvis_dft_3d` from `matminer`
 
-## Tasks
-- [x] Determine which option we will go with, band gap energy or ~~formation energy~~
-- [x] Sort through the data, determine shape and column labels.
-- [x] convert `jarvis_dft_3d['composition']` to formula 
-- [ ] Determine which structures are the same between dataset.
-- [ ] Extract experimental testing data for later.
+## Saved Models
 
+Since each model takes ~1-2hrs to train, I've saved and uploaded all the trained models as `h5` files under `models` in the below Google Drive.
+
+Please download the saved models from this [google drive](https://drive.google.com/drive/folders/1di1Z4m6CiwAwrqTfYHz8m1UNToHFoKvY?usp=drive_link) under an empty directory called `models` a level below the top level directory.
+
+## Dependencies
+Create a new environment and install all required `pip` and `conda` dependencies with the command:
+
+```
+conda create --name dft-bg-env python=3.11 --yes --file conda.txt && conda activate dft-bg-env && pip install -r pip.txt
+```
+
+## Instructions for running
+
+Activate the `dft-bg-env` environment to run. The files included in this project are:
+
+1) `Model Evals.ipynb`: This is the only file you will need to run for this project. This file loads the cleaned data and models. Functions in this file evaluate the perfomance of each model and print out a model summary so you can view the model architecture.
+2) `Load and Clean Matminer Data.ipynb`: This file houses the code that loads, cleans, and saves the DFT data from `matminer`. You do not need to run this file.
+3) `ML Models.ipynb`: This file is where the model training was conducted. You do not need to run this file. It is fairly unorganized too...
