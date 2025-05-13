@@ -1,0 +1,10 @@
+pymatgen
+numpy
+pandas
+ase
+dscribe
+mendeleev
+tqdm
+joblib
+matplotlib
+xgboost

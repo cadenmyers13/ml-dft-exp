@@ -1,4 +1,0 @@
-numpy
-pytest
-matminer
-pandas
