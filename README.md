@@ -36,4 +36,4 @@ Activate the `dft-bg-env` environment to run. The files included in this project
 
 1) `Model Evals.ipynb`: This is the only file you will need to run for this project. This file loads the cleaned data and models. Functions in this file evaluate the perfomance of each model and print out a model summary so you can view the model architecture.
 2) `Load and Clean Matminer Data.ipynb`: This file houses the code that loads, cleans, and saves the DFT data from `matminer`. You do not need to run this file.
-3) `ML Models.ipynb`: This file is where the model training was conducted. You do not need to run this file. 
+3) `ML Models.ipynb`: This file is where the model training was conducted. You do not need to run this file. It is fairly unorganized too...
